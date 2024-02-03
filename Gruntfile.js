@@ -56,6 +56,10 @@ module.exports = function (grunt) {
               match: "ENDERECO_DO_CSS",
               replacement: "./styles/main.min.css",
             },
+            {
+              match: "ENDERECO_DO_JS",
+              replacement: "./scripts/main.min.js",
+            },
           ],
         },
         files: [
@@ -80,6 +84,13 @@ module.exports = function (grunt) {
       },
     },
     clean: ["prebuild"],
+    uglify: {
+      target: {
+        files: {
+          "dist/scripts/main.min.js": "src/scripts/main.js",
+        },
+      },
+    },
   });
 
   grunt.loadNpmTasks("grunt-contrib-less");
@@ -95,5 +106,6 @@ module.exports = function (grunt) {
     "htmlmin:dist",
     "replace:dist",
     "clean",
+    "uglify",
   ]);
 };
