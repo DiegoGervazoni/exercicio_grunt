@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             {
               match: "ENDERECO_DO_JS",
               replacement: "../src/scripts/main.js",
-             },       
+            },
           ],
         },
         files: [
@@ -87,6 +87,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-replace");
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   grunt.registerTask("default", ["watch"]);
   grunt.registerTask("build", [
